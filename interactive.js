@@ -38,15 +38,17 @@ let totalCount = 0;
 const game = () => {
     playerCount = 0;
     enemyCount = 0;
-    totalCount =0;
-    for(let i = 0; i < 5; i++) {
+    totalCount = 0;
+    while(totalCount < 5) {
         let playerChoice = prompt("Pick Rock, Paper, or Scissors");
         const computerChoice = getComputerChoice();
         totalCount = playerCount + enemyCount;
-        console.log(playerCount)
-        console.log(enemyCount)
-        console.log(totalCount)
         playRound(playerChoice, computerChoice)
+    }
+    if (playerCount > enemyCount) {
+        console.log(`You won ${playerCount} out of 5 rounds! Victory is Yours!!!`)
+    } else {
+        console.log(`Defeat. Enemy beat you by ${enemyCount} wins`)
     }
 }
 game()
