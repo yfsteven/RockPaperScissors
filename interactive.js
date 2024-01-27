@@ -8,18 +8,18 @@ const playRound = (playerSelection, computerSelection) => {
         console.log("It's a Tie!");
     } else if (sanitizedPlayerSelection === 'rock') {
         switch(computerSelection) {
-            case 'paper': console.log('You lost!'); break;
-            case 'scissors': console.log('You won!'); break;
+            case 'paper': console.log('You lost!'); enemyCount++; break;
+            case 'scissors': console.log('You won!'); playerCount++; break;
         }
     } else if (sanitizedPlayerSelection === 'paper') {
         switch(computerSelection) {
-            case 'rock': console.log('You won!'); break;
-            case 'scissors': console.log('You lost!'); break;
+            case 'rock': console.log('You won!'); playerCount++; break;
+            case 'scissors': console.log('You lost!'); enemyCount++; break;
         }
     } else if (sanitizedPlayerSelection === 'scissors') {
         switch(computerSelection) {
-            case 'paper': console.log('You won!'); break;
-            case 'rock': console.log('You lost!'); break;
+            case 'paper': console.log('You won!'); playerCount++; break;
+            case 'rock': console.log('You lost!'); enemyCount++; break;
         }
     } else {
         console.log('Please select Rock, Paper, or Scissors');
@@ -31,11 +31,21 @@ const playRound = (playerSelection, computerSelection) => {
 const getComputerChoice = () => {
     return threeValues[Math.floor(Math.random() * 3)];
 }
+let playerCount = 0;
+let enemyCount = 0;
+let totalCount = 0;
 
 const game = () => {
+    playerCount = 0;
+    enemyCount = 0;
+    totalCount =0;
     for(let i = 0; i < 5; i++) {
         let playerChoice = prompt("Pick Rock, Paper, or Scissors");
         const computerChoice = getComputerChoice();
+        totalCount = playerCount + enemyCount;
+        console.log(playerCount)
+        console.log(enemyCount)
+        console.log(totalCount)
         playRound(playerChoice, computerChoice)
     }
 }
