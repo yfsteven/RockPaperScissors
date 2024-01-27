@@ -31,5 +31,12 @@ const playRound = (playerSelection, computerSelection) => {
 const getComputerChoice = () => {
     return threeValues[Math.floor(Math.random() * 3)];
 }
-const computerChoice = getComputerChoice();
-playRound(playerChoice, computerChoice)
+
+const game = () => {
+    for(let i = 0; i < 5; i++) {
+        let playerChoice = prompt("Pick Rock, Paper, or Scissors");
+        const computerChoice = getComputerChoice();
+        playRound(playerChoice, computerChoice)
+    }
+}
+game()
