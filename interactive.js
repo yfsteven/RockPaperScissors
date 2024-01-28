@@ -1,7 +1,7 @@
 const threeValues = ['paper', 'rock', 'scissors'];
 
+/*
 let playerChoice = prompt("Pick Rock, Paper, or Scissors");
-
 const playRound = (playerSelection, computerSelection) => {
     const sanitizedPlayerSelection = playerSelection.toLowerCase();  
     if (sanitizedPlayerSelection === computerSelection) {
@@ -52,3 +52,4 @@ const game = () => {
     }
 }
 game()
+*/
