@@ -11,7 +11,9 @@ body {
     display: flex;
     flex-direction: row;
 }
-
+p {
+    font-family: Karla;
+}
 .ui-button {
     align-items: center;
     background-clip: padding-box;

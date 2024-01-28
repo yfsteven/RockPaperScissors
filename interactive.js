@@ -2,6 +2,7 @@ const threeValues = ['paper', 'rock', 'scissors'];
 
 const threeButtons = document.querySelectorAll('.ui-button');
 const logs = document.querySelector('#rounds-log');
+const sum = document.querySelector('#sum--count');
 
 
 threeButtons.forEach((button) => {
@@ -43,34 +44,14 @@ const playRound = (playerSelection) => {
     }
     totalCount = playerCount + enemyCount;
     console.log(totalCount);
-}
-
-/*const playRound = (playerSelection) => {
-    const computerSelection = getComputerChoice();
-    const sanitizedPlayerSelection = playerSelection.toLowerCase();  
-    if (sanitizedPlayerSelection === computerSelection) {
-        console.log("It's a Tie!");
-    } else if (sanitizedPlayerSelection === 'rock') {
-        switch(computerSelection) {
-            case 'paper': console.log('You lost!'); enemyCount++; break;
-            case 'scissors': console.log('You won!'); playerCount++; break;
+    while(totalCount === 5) {
+        if(playerCount > enemyCount) {
+            totalCount = 0;
+            logs.innerHTML += `<h2>Victory!</h2>`;
+        } else {
+            totalCount = 0;
+            logs.innerHTML += `<h2>Defeat!</h2>`;
         }
-    } else if (sanitizedPlayerSelection === 'paper') {
-        switch(computerSelection) {
-            case 'rock': console.log('You won!'); playerCount++; break;
-            case 'scissors': console.log('You lost!'); enemyCount++; break;
-        }
-    } else if (sanitizedPlayerSelection === 'scissors') {
-        switch(computerSelection) {
-            case 'paper': console.log('You won!'); playerCount++; break;
-            case 'rock': console.log('You lost!'); enemyCount++; break;
-        }
-    } else {
-        console.log('Please select Rock, Paper, or Scissors');
     }
-    totalCount = playerCount + enemyCount;
-    console.log(totalCount);
 }
-
-*/
 
