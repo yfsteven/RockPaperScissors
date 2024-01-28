@@ -43,7 +43,6 @@ const playRound = (playerSelection) => {
         logs.innerHTML += `<p>Please select Rock, Paper, or Scissors</p>`;
     }
     totalCount = playerCount + enemyCount;
-    console.log(totalCount);
     while(totalCount === 5) {
         if(playerCount > enemyCount) {
             totalCount = 0;
@@ -53,5 +52,6 @@ const playRound = (playerSelection) => {
             logs.innerHTML += `<h2>Defeat!</h2>`;
         }
     }
+    sum.innerHTML = `Player: ${playerCount} Enemy: ${enemyCount} Total: ${totalCount}`;
 }
 
